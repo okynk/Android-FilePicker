@@ -61,6 +61,11 @@ class FilePickerBuilder {
         return this
     }
 
+    fun showTabs(show : Boolean): FilePickerBuilder {
+        PickerManager.showTabs = show
+        return this
+    }
+
     fun showGifs(status: Boolean): FilePickerBuilder {
         PickerManager.isShowGif = status
         return this

@@ -37,6 +37,8 @@ object PickerManager {
 
     var isEnableCamera = true
 
+    var showTabs = true
+
     /**
      * The preferred screen orientation this activity would like to run in.
      * From the {@link android.R.attr#screenOrientation} attribute, one of
@@ -177,5 +179,9 @@ object PickerManager {
 
     fun enableSelectAll(showSelectAll: Boolean) {
         this.showSelectAll = showSelectAll
+    }
+
+    fun showTabs(): Boolean {
+        return showTabs
     }
 }
