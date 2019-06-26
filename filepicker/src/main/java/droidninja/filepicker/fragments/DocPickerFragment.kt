@@ -19,12 +19,13 @@ import droidninja.filepicker.models.Document
 import droidninja.filepicker.models.FileType
 import droidninja.filepicker.utils.MediaStoreHelper
 import droidninja.filepicker.utils.TabLayoutHelper
+import droidninja.filepicker.views.CustomViewPager
 
 class DocPickerFragment : BaseFragment() {
 
     lateinit var tabLayout: TabLayout
 
-    lateinit var viewPager: ViewPager
+    lateinit var viewPager: CustomViewPager
     private var progressBar: ProgressBar? = null
     private var mListener: DocPickerFragmentListener? = null
 
@@ -123,8 +124,10 @@ class DocPickerFragment : BaseFragment() {
         if(PickerManager.showTabs) {
             tabLayout.setupWithViewPager(viewPager)
             tabLayout.visibility = View.VISIBLE
+            viewPager.swipeEnabled = true
         } else {
             tabLayout.visibility = View.GONE
+            viewPager.swipeEnabled = false
         }
 
         val mTabLayoutHelper = TabLayoutHelper(tabLayout, viewPager)

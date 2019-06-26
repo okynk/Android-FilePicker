@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
 import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
@@ -74,6 +73,7 @@ class FilePickerActivity : BaseFilePickerActivity(), PhotoPickerFragmentListener
             FragmentUtil.replaceFragment(this, R.id.container, photoFragment)
         } else {
             if (PickerManager.isDocSupport) PickerManager.addDocTypes()
+            else if(PickerManager.pdfOnly) PickerManager.addPdfTypes()
 
             val photoFragment = DocPickerFragment.newInstance()
             FragmentUtil.replaceFragment(this, R.id.container, photoFragment)

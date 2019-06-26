@@ -61,11 +61,6 @@ class FilePickerBuilder {
         return this
     }
 
-    fun showTabs(show : Boolean): FilePickerBuilder {
-        PickerManager.showTabs = show
-        return this
-    }
-
     fun showGifs(status: Boolean): FilePickerBuilder {
         PickerManager.isShowGif = status
         return this
@@ -86,6 +81,12 @@ class FilePickerBuilder {
         return this
     }
 
+    fun pdfOnly(): FilePickerBuilder{
+        PickerManager.pdfOnly = true
+        PickerManager.showTabs = false
+        PickerManager.isDocSupport = false
+        return this
+    }
 
     fun withOrientation(@IntegerRes orientation:  Int): FilePickerBuilder {
         PickerManager.orientation = orientation

@@ -38,6 +38,7 @@ object PickerManager {
     var isEnableCamera = true
 
     var showTabs = true
+    var pdfOnly = false
 
     /**
      * The preferred screen orientation this activity would like to run in.
@@ -152,9 +153,13 @@ object PickerManager {
         fileTypes.add(fileType)
     }
 
-    fun addDocTypes() {
+    fun addPdfTypes(){
         val pdfs = arrayOf("pdf")
         fileTypes.add(FileType(FilePickerConst.PDF, pdfs, R.drawable.icon_file_pdf))
+    }
+
+    fun addDocTypes() {
+        addPdfTypes()
 
         val docs = arrayOf("doc", "docx", "dot", "dotx")
         fileTypes.add(FileType(FilePickerConst.DOC, docs, R.drawable.icon_file_doc))
