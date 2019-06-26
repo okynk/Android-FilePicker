@@ -6,5 +6,6 @@
       android:orderInCategory="99"
       android:checked="false"
       app:showAsAction="always"
-      android:title="Select All"/>
+      android:title="Select All"
+      app:iconTint="@color/select_all_icon_color"/>
 </menu>

@@ -7,12 +7,14 @@
       android:icon="@drawable/ic_search"
       android:title="Search"
       app:showAsAction="ifRoom|collapseActionView"
-      app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+      app:actionViewClass="androidx.appcompat.widget.SearchView"
+      app:iconTint="@color/search_icon_color"/>
 
   <item android:id="@+id/action_select"
       android:icon="@drawable/ic_deselect_all"
       android:orderInCategory="99"
       android:checked="false"
       app:showAsAction="always"
-      android:title="Select All"/>
+      android:title="Select All"
+      app:iconTint="@color/select_all_icon_color"/>
 </menu>
