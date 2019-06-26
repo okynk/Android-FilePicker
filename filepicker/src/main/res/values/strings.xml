@@ -26,4 +26,5 @@
     <string name="all_videos">All Videos</string>
     <string name="all_files">All Files</string>
 
+    <string name="searchview_query_hint"></string>
 </resources>
