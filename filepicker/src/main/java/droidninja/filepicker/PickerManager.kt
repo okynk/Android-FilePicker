@@ -39,6 +39,7 @@ object PickerManager {
 
     var showTabs = true
     var pdfOnly = false
+    var hideSearch = false
 
     /**
      * The preferred screen orientation this activity would like to run in.

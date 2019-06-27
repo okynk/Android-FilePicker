@@ -123,18 +123,23 @@ class DocFragment : BaseFragment(), FileAdapterListener {
         }
 
         val search = menu?.findItem(R.id.search)
-        val searchView = search?.actionView as SearchView
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
+        if (PickerManager.hideSearch){
+            search?.isVisible = false
+        } else {
+            search?.isVisible = true
+            val searchView = search?.actionView as SearchView
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String): Boolean {
 
-                return false
-            }
+                    return false
+                }
 
-            override fun onQueryTextChange(newText: String): Boolean {
+                override fun onQueryTextChange(newText: String): Boolean {
                     fileListAdapter?.filter?.filter(newText)
-                return true
-            }
-        })
+                    return true
+                }
+            })
+        }
 
         super.onCreateOptionsMenu(menu, inflater)
     }

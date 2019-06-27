@@ -81,10 +81,15 @@ class FilePickerBuilder {
         return this
     }
 
-    fun pdfOnly(): FilePickerBuilder{
+    fun pdfOnly(): FilePickerBuilder {
         PickerManager.pdfOnly = true
         PickerManager.showTabs = false
         PickerManager.isDocSupport = false
+        return this
+    }
+
+    fun hideSearch(): FilePickerBuilder {
+        PickerManager.hideSearch = true
         return this
     }
 
